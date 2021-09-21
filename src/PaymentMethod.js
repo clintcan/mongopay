@@ -1,3 +1,28 @@
+const utility = require('./utility');
+const func = 'payment_methods';
+
 module.exports = {
-	
+	create: async function (cardnumber, expiry_month, expiry_year, cvc, billing = null, type = 'card') {
+		var payload = {
+			data: {
+				attributes: {
+					type: type,
+					details: {
+						card_number: cardnumber,
+						exp_month: expiry_month,
+						exp_year: expiry_year,
+						cvc: cvc
+					}
+				}
+			}
+		};
+		if(billing !== null) {
+			payload.data.attributes.billing = billing; // set billing attributes
+		}
+		result = await utility.callpost(func, this.secret, payload);
+		return result;
+	},
+	get: async function (id) {
+		result = await utility.callget(func, this.secret, id);
+	}
 }
