@@ -1,0 +1,26 @@
+{
+  "name": "mongopay",
+  "version": "1.0.0",
+  "description": "This is a library which maps functions to the paymongo API",
+  "main": "mongopay.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clintcan/mongopay.git"
+  },
+  "keywords": [
+    "paymongo",
+    "payment processor"
+  ],
+  "author": "Clint Canada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clintcan/mongopay/issues"
+  },
+  "homepage": "https://github.com/clintcan/mongopay#readme",
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  }
+}
