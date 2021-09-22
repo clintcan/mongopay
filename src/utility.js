@@ -16,6 +16,19 @@ module.exports = {
     };
     return await fetch(url+func, options).json;
   },
+  callput: async function (func, secret, payload) {
+    secret64 = btoa(secret);
+    const options = {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: 'Basic '+secret64
+      },
+      body: JSON.stringify(payload);
+    };
+    return await fetch(url+func, options).json;
+  },
   callget: async function (func, secret, id) {
     secret64 = btoa(secret);
     const options = {

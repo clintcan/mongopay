@@ -2,7 +2,7 @@ const utility = require('./utility');
 const func = 'payment_methods';
 
 module.exports = {
-	create: async function (cardnumber, expiry_month, expiry_year, cvc, billing = null, type = 'card') {
+	create: async function (cardnumber, expiry_month, expiry_year, cvc, billing, type = 'card') {
 		var payload = {
 			data: {
 				attributes: {
@@ -16,13 +16,14 @@ module.exports = {
 				}
 			}
 		};
-		if(billing !== null) {
+		if(billing) {
 			payload.data.attributes.billing = billing; // set billing attributes
 		}
 		result = await utility.callpost(func, this.secret, payload);
 		return result;
 	},
 	get: async function (id) {
-		result = await utility.callget(func, this.secret, id);
+		result = await utility.callget(func+'/'+id, this.secret, id);
+		return result;
 	}
 }
