@@ -3,6 +3,6 @@
 npm install --save mongopay
 ## How to use in a program
 ```
-mongopay = require('mongopay');
+mongopay = require('mongopay').default;
 
 ```
