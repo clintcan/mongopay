@@ -1,14 +1,36 @@
-exports.mongopay = function(secret) {
-	var PaymentMethod = require('./src/PaymentMethod');
-	var PaymentIntent = require('./src/PaymentIntent');
-	var Source = require('./src/Source');
-	var Payments = require('./src/Payments');
-	var Webhook = require('./src/Webhook');
+exports.default = {
+	secret: null,
+	PaymentMethod: null,
+	PaymentIntent: null,
+	Source: null,
+	Payments: null,
+	Webhook: null,
+	PaymentMethod: require('./src/PaymentMethod'),
+	PaymentIntent: require('./src/PaymentIntent'),
+	Source: require('./src/Source'),
+	Payments: require('./src/Payments'),
+	Webhook: require('./src/Webhook'),
+	init: function(secret) {
+		this.secret = secret;
 
-	/** Setup secret **/
-	PaymentMethod.secret = secret;
-	PaymentIntent.secret = secret;
-	Source.secret = secret;
-	Payments.secret = secret;
-	Webhook.secret = secret;
+	},
 }
+
+
+// exports.mongopay = function(secret) {
+
+// 	var module = {};
+
+// 	exports.PaymentMethod = require('./src/PaymentMethod');
+// 	exports.PaymentIntent = require('./src/PaymentIntent');
+// 	exports.Source = require('./src/Source');
+// 	exports.Payments = require('./src/Payments');
+// 	exports.Webhook = require('./src/Webhook');
+
+// 	/** Setup secret **/
+// 	exports.PaymentMethod.secret = secret;
+// 	exports.PaymentIntent.secret = secret;
+// 	exports.Source.secret = secret;
+// 	exports.Payments.secret = secret;
+// 	exports.Webhook.secret = secret;
+// }

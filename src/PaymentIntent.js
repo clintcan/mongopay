@@ -34,7 +34,7 @@ module.exports = {
 			payload.data.attributes.return_url = return_url;
 		}
 		result = await utility.callpost(func+'/'+id, this.secret, payload);
-	}
+	},
 	get: async function (id) {
 		result = await utility.callget(func+'/'+id, this.secret, id);
 		return result;

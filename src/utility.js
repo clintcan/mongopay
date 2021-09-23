@@ -12,7 +12,7 @@ module.exports = {
         'Content-Type': 'application/json',
         Authorization: 'Basic '+secret64
       },
-      body: JSON.stringify(payload);
+      body: JSON.stringify(payload)
     };
     return await fetch(url+func, options).json;
   },
@@ -25,7 +25,7 @@ module.exports = {
         'Content-Type': 'application/json',
         Authorization: 'Basic '+secret64
       },
-      body: JSON.stringify(payload);
+      body: JSON.stringify(payload)
     };
     return await fetch(url+func, options).json;
   },
