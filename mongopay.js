@@ -12,7 +12,10 @@ exports.default = {
 	Webhook: require('./src/Webhook'),
 	init: function(secret) {
 		this.secret = secret;
-
+		this.PaymentMethod.secret = secret;
+		this.PaymentIntent.secret = secret;
+		this.Source.secret = secret;
+		this.Webhook.secret = secret;
 	},
 }
 
