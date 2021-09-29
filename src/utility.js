@@ -47,13 +47,14 @@ module.exports = {
       return false;
     }
   },
-  callget: async function (func, secret, id, querystring) {
+  callget: async function (func, secret, id = '', querystring) {
     secret64 = btoa(secret);
     if(querystring) {
       wholeurl = url+func+'/'+id+querystring;
     } else {
       wholeurl = url+func+'/'+id;
     }
+    console.log(wholeurl);
     const options = {
       method: 'GET',
       url: wholeurl,

@@ -39,7 +39,7 @@ module.exports = {
 		return result.data;
 	},
 	get: async function (id) {
-		result = await utility.callget(func+'/'+id, this.secret, id);
+		result = await utility.callget(func, this.secret, id);
 		return result.data;
 	}
 }
