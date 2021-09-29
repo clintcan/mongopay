@@ -14,6 +14,7 @@ exports.default = {
 		this.secret = secret;
 		this.PaymentMethod.secret = secret;
 		this.PaymentIntent.secret = secret;
+		this.Payments.secret = secret;
 		this.Source.secret = secret;
 		this.Webhook.secret = secret;
 	},
