@@ -2,7 +2,7 @@ const utility = require('./utility');
 const func = 'payment_intents';
 
 module.exports = {
-	create: async function (amount, currency = 'PHP', payment_method_allowed = 'card', description, statement_descriptor) {
+	create: async function (amount, currency = 'PHP', payment_method_allowed = ['card'], description, statement_descriptor) {
 		var payload = {
 			data: {
 				attributes: {
