@@ -20,7 +20,11 @@ module.exports = {
 			payload.data.attributes.statement_descriptor = statement_descriptor;
 		}
 		result = await utility.callpost(func, this.secret, payload);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	},
 	attach: async function (id, payment_method, return_url) {
 		var payload = {
@@ -34,10 +38,18 @@ module.exports = {
 			payload.data.attributes.return_url = return_url;
 		}
 		result = await utility.callpost(func+'/'+id, this.secret, payload);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	},
 	get: async function (id) {
 		result = await utility.callget(func, this.secret, id);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	}
 }

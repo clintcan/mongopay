@@ -16,11 +16,19 @@ module.exports = {
 		  }
 		};
 		result = await utility.callpost(func, this.secret, payload);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	},
 	get: async function (id) {
 		result = await utility.callget(func, this.secret, id);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	},
 	listall: async function(limit = 10, before, after) {
 		query = '?limit='+limit;
@@ -31,6 +39,10 @@ module.exports = {
 			query = query+'&after='+after;
 		}
 		result = await utility.callget(func, this.secret, id, query);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	}
 }

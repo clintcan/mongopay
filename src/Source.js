@@ -20,10 +20,18 @@ module.exports = {
 			payload.data.attributes.billing = billing;
 		}
 		result = await utility.callpost(func, this.secret, payload);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	},
 	get: async function (id) {
 		result = await utility.callget(func, this.secret, id);
-		return result.data;
+		if(result.errors) {
+			return result; 
+		} else {
+			return result.data;
+		}
 	}
 }

@@ -23,8 +23,9 @@ module.exports = {
       result = await axios(options);
       return result;
     } catch (e) {
-      console.dir(e.response.data);
-      return false;
+      // console.dir(e.response.data);
+      // return false;
+      return e.response.data;
     }
   },
   callput: async function (func, secret, payload) {
@@ -43,8 +44,9 @@ module.exports = {
       result = await axios(options);
       return result;
     } catch (e) {
-      console.dir(e.response.data);
-      return false;
+      // console.dir(e.response.data);
+      // return false;
+      return e.response.data;
     }
   },
   callget: async function (func, secret, id = '', querystring) {
@@ -68,8 +70,9 @@ module.exports = {
       result = await axios(options);
       return result;
     } catch (e) {
-      console.dir(e.response.data);
-      return false;
+      // console.dir(e.response.data);
+      // return false;
+      return e.response.data;
     }
   }
 }
